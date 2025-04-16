@@ -1,6 +1,16 @@
 // pages/api/checkout.ts
 
 export default async function handler(req: any, res: any) {
+  // Adiciona os cabeçalhos CORS
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Permite qualquer origem
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS'); // Métodos permitidos
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization'); // Cabeçalhos permitidos
+
+  // Se for uma requisição OPTIONS (preflight), só retorne os cabeçalhos CORS
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
   if (req.method === 'POST') {
     try {
       // Dados do corpo da requisição
