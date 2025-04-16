@@ -32,8 +32,11 @@ export default async function handler(req: any, res: any) {
       if (apiResponse.ok) {
         // Resposta da API externa
         const data = await apiResponse.json();
-        // Retornar a resposta para o cliente
-        res.status(200).json(data);
+        // Extrair a URL de redirecionamento da resposta da API
+        const redirectUrl = data.redirect_url;
+        // Retornar o redirecionamento para o front-end
+        // Redirecionar o usuário para a URL fornecida
+        res.status(200).json({ redirect_url: redirectUrl });
       } else {
         // Se algo deu errado na API externa, retornar erro
         res.status(apiResponse.status).json({ message: 'Erro na API externa' });
