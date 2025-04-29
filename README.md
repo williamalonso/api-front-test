@@ -9,6 +9,12 @@ A API funciona como um proxy: ela recebe requisições do frontend e repassa os 
 
 ---
 
+## 🔗 Frontend do desafio
+
+Você pode acessar o repositório com a implementação do frontend relacionado a este projeto clicando [aqui](https://github.com/williamalonso/desafio-frontend).
+
+---
+
 ## 🚀 Tecnologias
 
 Este projeto foi desenvolvido com as seguintes tecnologias:
